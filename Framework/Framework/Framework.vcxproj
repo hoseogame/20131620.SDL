@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E7AF087E-5576-4EAE-8B4C-092E351514CD}</ProjectGuid>
+    <RootNamespace>Framework</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\user\Desktop\SDL\SDL2-2.0.4\include;C:\Users\user\Desktop\SDL\FMOD Studio API Windows\api\lowlevel\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\user\Desktop\SDL\SDL2-2.0.4\lib\x86;C:\Users\user\Desktop\SDL\FMOD Studio API Windows\api\lowlevel\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="FW\Game\Game.cpp" />
+    <ClCompile Include="FW\Game\Main.cpp" />
+    <ClCompile Include="FW\Manager\Input\InputHandler.cpp" />
+    <ClCompile Include="FW\Manager\SoundManager.cpp" />
+    <ClCompile Include="FW\Manager\Texture\TextureManager.cpp" />
+    <ClCompile Include="FW\Object\Button\MenuButton.cpp" />
+    <ClCompile Include="FW\Object\SDLGameObject.cpp" />
+    <ClCompile Include="FW\State\GameStateMachine.cpp" />
+    <ClCompile Include="Game\State\CreditState.cpp" />
+    <ClCompile Include="Game\State\HelpState.cpp" />
+    <ClCompile Include="Game\State\MenuState.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FW\Game\Game.h" />
+    <ClInclude Include="FW\Manager\Factory\GameObjectFactory.h" />
+    <ClInclude Include="FW\Manager\Input\InputHandler.h" />
+    <ClInclude Include="FW\Manager\Load\LoaderParams.h" />
+    <ClInclude Include="FW\Manager\SoundManager.h" />
+    <ClInclude Include="FW\Manager\Texture\TextureManager.h" />
+    <ClInclude Include="FW\Math\Vector2D.h" />
+    <ClInclude Include="FW\Object\Button\MenuButton.h" />
+    <ClInclude Include="FW\Object\GameObject.h" />
+    <ClInclude Include="FW\Object\SDLGameObject.h" />
+    <ClInclude Include="FW\State\GameState.h" />
+    <ClInclude Include="FW\State\GameStateMachine.h" />
+    <ClInclude Include="Game\State\CreditState.h" />
+    <ClInclude Include="Game\State\HelpState.h" />
+    <ClInclude Include="Game\State\MenuState.h" />
+    <ClInclude Include="Game\State\PlayState.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
